@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Neon Girly Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            margin: 0 15px;
+            color: #ff77a8;
+            text-decoration: none;
+            text-shadow: 0 0 5px #ff77a8;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffccf5;
+        }
+        section {
+            padding: 100px 20px;
+            margin: 80px 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff77a8, 0 0 10px #ff77a8; }
+            100% { text-shadow: 0 0 10px #ffccf5, 0 0 20px #ffccf5; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about">
+        <h1>Who I Am</h1>
+        <p>Welcome to my interactive portfolio! I am a creative individual passionate about traditional drawing, graphic design, coding, data analysis, and research.
+        </p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Traditional Drawing</li>
+            <li>Graphics Design</li>
+            <li>Coding</li>
+            <li>Data Analysis</li>
+            <li>Research</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach out to me via my social media or email for any inquiries or collaborations.
+        </p>
+    </section>
+</body>
+</html>
