@@ -3,77 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Neon Girly Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #fff;
-            scroll-behavior: smooth;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        nav a {
-            margin: 0 15px;
-            color: #ff77a8;
-            text-decoration: none;
-            text-shadow: 0 0 5px #ff77a8;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffccf5;
-        }
-        section {
-            padding: 100px 20px;
-            margin: 80px 0;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            animation: glow 1s infinite alternate;
-        }
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #ff77a8, 0 0 10px #ff77a8; }
-            100% { text-shadow: 0 0 10px #ffccf5, 0 0 20px #ffccf5; }
-        }
-    </style>
+    <title>My Creative Portfolio | ririislockedin</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section id="about">
-        <h1>Who I Am</h1>
-        <p>Welcome to my interactive portfolio! I am a creative individual passionate about traditional drawing, graphic design, coding, data analysis, and research.
-        </p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">✨ ririislockedin</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <h1 class="title-main">Hello, I'm <span class="gradient-text">ririislockedin</span></h1>
+            <p class="subtitle">Creative Storyteller • Designer • Developer • Data Analyst</p>
+            <p class="tagline">Blending art, code, and data into interactive experiences</p>
+            <button class="cta-button">Explore My Work</button>
+        </div>
     </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Traditional Drawing</li>
-            <li>Graphics Design</li>
-            <li>Coding</li>
-            <li>Data Analysis</li>
-            <li>Research</li>
-        </ul>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="story-text">
+                    <p>I'm a multidisciplinary creative who loves bringing ideas to life through different mediums. From pencil strokes on paper to pixels on screens, I believe every project tells a story.</p>
+                    <p>My journey spans across traditional art, digital design, and the technical world of coding and data analysis. I'm passionate about creating experiences that are not just beautiful, but meaningful.</p>
+                    <p>Whether I'm sketching character designs, crafting user interfaces, debugging code, or uncovering insights from data, I approach every project with curiosity and creativity.</p>
+                </div>
+                <div class="story-visual">
+                    <div class="glass-card">
+                        <div class="icon-grid">
+                            <div class="icon-item pink">🎨</div>
+                            <div class="icon-item purple">✏️</div>
+                            <div class="icon-item blue">💻</div>
+                            <div class="icon-item yellow">📊</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach out to me via my social media or email for any inquiries or collaborations.
-        </p>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skillset</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass pink">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Graphics Design</h3>
+                    <p>UI/UX design, branding, digital illustrations, and visual storytelling</p>
+                </div>
+                <div class="skill-card glass purple">
+                    <div class="skill-icon">✏️</div>
+                    <h3>Traditional Drawing</h3>
+                    <p>Character design, sketching, conceptual art, and fine art</p>
+                </div>
+                <div class="skill-card glass blue">
+                    <div class="skill-icon">💻</div>
+                    <h3>Coding & Development</h3>
+                    <p>Web development, frontend design, interactive projects</p>
+                </div>
+                <div class="skill-card glass yellow">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <p>Data visualization, insights discovery, research-backed decisions</p>
+                </div>
+                <div class="skill-card glass purple">
+                    <div class="skill-icon">🔬</div>
+                    <h3>Research</h3>
+                    <p>User research, market analysis, trend exploration</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Work</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="coding">Coding</button>
+                <button class="filter-btn" data-filter="art">Traditional Art</button>
+                <button class="filter-btn" data-filter="data">Data & Research</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item glass" data-category="design">
+                    <div class="portfolio-image design-placeholder"></div>
+                    <h3>Brand Identity Project</h3>
+                    <p>Complete branding suite with logo, color palette, and guidelines</p>
+                    <span class="category-tag">Graphics Design</span>
+                </div>
+
+                <div class="portfolio-item glass" data-category="art">
+                    <div class="portfolio-image art-placeholder"></div>
+                    <h3>Character Design Series</h3>
+                    <p>Traditional pencil sketches exploring character development</p>
+                    <span class="category-tag">Traditional Art</span>
+                </div>
+
+                <div class="portfolio-item glass" data-category="coding">
+                    <div class="portfolio-image coding-placeholder"></div>
+                    <h3>Interactive Web Project</h3>
+                    <p>Full-stack web application with animations and data visualization</p>
+                    <span class="category-tag">Coding</span>
+                </div>
+
+                <div class="portfolio-item glass" data-category="data">
+                    <div class="portfolio-image data-placeholder"></div>
+                    <h3>Market Research Analysis</h3>
+                    <p>Data-driven insights from user behavior analysis</p>
+                    <span class="category-tag">Data & Research</span>
+                </div>
+
+                <div class="portfolio-item glass" data-category="design">
+                    <div class="portfolio-image design-placeholder"></div>
+                    <h3>UI/UX Design System</h3>
+                    <p>Comprehensive design system for digital products</p>
+                    <span class="category-tag">Graphics Design</span>
+                </div>
+
+                <div class="portfolio-item glass" data-category="coding">
+                    <div class="portfolio-image coding-placeholder"></div>
+                    <h3>Creative Coding Experiment</h3>
+                    <p>Generative art and interactive visual experiences</p>
+                    <span class="category-tag">Coding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p>I'd love to collaborate or hear about your projects!</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn pink">GitHub</a>
+                    <a href="#" class="social-btn purple">LinkedIn</a>
+                    <a href="#" class="social-btn blue">Instagram</a>
+                    <a href="#" class="social-btn yellow">Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ririislockedin. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
