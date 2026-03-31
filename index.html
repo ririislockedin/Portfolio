@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Creative Portfolio | ririislockedin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -26,12 +26,15 @@
         </div>
     </nav>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="stars"></div>
         <div class="hero-content">
             <h1 class="title-main">Hello, I'm <span class="gradient-text">ririislockedin</span></h1>
-            <p class="subtitle">Creative Storyteller • Designer • Developer • Data Analyst</p>
+            <p class="subtitle">Creative Storyteller • Designer • Developer • Data Analyst • Researcher</p>
             <p class="tagline">Blending art, code, and data into interactive experiences</p>
             <button class="cta-button">Explore My Work</button>
         </div>
@@ -42,18 +45,18 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="story-text">
+                <div class="story-text fade-in">
                     <p>I'm a multidisciplinary creative who loves bringing ideas to life through different mediums. From pencil strokes on paper to pixels on screens, I believe every project tells a story.</p>
                     <p>My journey spans across traditional art, digital design, and the technical world of coding and data analysis. I'm passionate about creating experiences that are not just beautiful, but meaningful.</p>
                     <p>Whether I'm sketching character designs, crafting user interfaces, debugging code, or uncovering insights from data, I approach every project with curiosity and creativity.</p>
                 </div>
-                <div class="story-visual">
+                <div class="story-visual fade-in">
                     <div class="glass-card">
                         <div class="icon-grid">
-                            <div class="icon-item pink">🎨</div>
-                            <div class="icon-item purple">✏️</div>
-                            <div class="icon-item blue">💻</div>
-                            <div class="icon-item yellow">📊</div>
+                            <div class="icon-item pink" data-tooltip="Graphics Design">🎨</div>
+                            <div class="icon-item purple" data-tooltip="Traditional Drawing">✏️</div>
+                            <div class="icon-item blue" data-tooltip="Coding">💻</div>
+                            <div class="icon-item yellow" data-tooltip="Data Analysis">📊</div>
                         </div>
                     </div>
                 </div>
@@ -66,30 +69,55 @@
         <div class="container">
             <h2 class="section-title">My Skillset</h2>
             <div class="skills-grid">
-                <div class="skill-card glass pink">
+                <div class="skill-card glass pink fade-in">
                     <div class="skill-icon">🎨</div>
                     <h3>Graphics Design</h3>
                     <p>UI/UX design, branding, digital illustrations, and visual storytelling</p>
+                    <div class="skill-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Adobe XD</span>
+                        <span class="tag">Canva</span>
+                    </div>
                 </div>
-                <div class="skill-card glass purple">
+                <div class="skill-card glass purple fade-in">
                     <div class="skill-icon">✏️</div>
                     <h3>Traditional Drawing</h3>
                     <p>Character design, sketching, conceptual art, and fine art</p>
+                    <div class="skill-tags">
+                        <span class="tag">Pencil</span>
+                        <span class="tag">Watercolor</span>
+                        <span class="tag">Ink</span>
+                    </div>
                 </div>
-                <div class="skill-card glass blue">
+                <div class="skill-card glass blue fade-in">
                     <div class="skill-icon">💻</div>
                     <h3>Coding & Development</h3>
                     <p>Web development, frontend design, interactive projects</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                    </div>
                 </div>
-                <div class="skill-card glass yellow">
+                <div class="skill-card glass yellow fade-in">
                     <div class="skill-icon">📊</div>
                     <h3>Data Analysis</h3>
                     <p>Data visualization, insights discovery, research-backed decisions</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Tableau</span>
+                    </div>
                 </div>
-                <div class="skill-card glass purple">
+                <div class="skill-card glass purple fade-in">
                     <div class="skill-icon">🔬</div>
                     <h3>Research</h3>
                     <p>User research, market analysis, trend exploration</p>
+                    <div class="skill-tags">
+                        <span class="tag">UX Research</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Surveys</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,46 +137,106 @@
             </div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-item glass" data-category="design">
-                    <div class="portfolio-image design-placeholder"></div>
+                <!-- Design Projects -->
+                <div class="portfolio-item glass fade-in" data-category="design">
+                    <div class="portfolio-image design-placeholder">
+                        <div class="image-overlay">🎨</div>
+                    </div>
                     <h3>Brand Identity Project</h3>
-                    <p>Complete branding suite with logo, color palette, and guidelines</p>
-                    <span class="category-tag">Graphics Design</span>
+                    <p>Complete branding suite with logo, color palette, typography guidelines, and brand book</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Branding</span>
+                    </div>
                 </div>
 
-                <div class="portfolio-item glass" data-category="art">
-                    <div class="portfolio-image art-placeholder"></div>
-                    <h3>Character Design Series</h3>
-                    <p>Traditional pencil sketches exploring character development</p>
-                    <span class="category-tag">Traditional Art</span>
-                </div>
-
-                <div class="portfolio-item glass" data-category="coding">
-                    <div class="portfolio-image coding-placeholder"></div>
-                    <h3>Interactive Web Project</h3>
-                    <p>Full-stack web application with animations and data visualization</p>
-                    <span class="category-tag">Coding</span>
-                </div>
-
-                <div class="portfolio-item glass" data-category="data">
-                    <div class="portfolio-image data-placeholder"></div>
-                    <h3>Market Research Analysis</h3>
-                    <p>Data-driven insights from user behavior analysis</p>
-                    <span class="category-tag">Data & Research</span>
-                </div>
-
-                <div class="portfolio-item glass" data-category="design">
-                    <div class="portfolio-image design-placeholder"></div>
+                <div class="portfolio-item glass fade-in" data-category="design">
+                    <div class="portfolio-image design-placeholder">
+                        <div class="image-overlay">🎨</div>
+                    </div>
                     <h3>UI/UX Design System</h3>
-                    <p>Comprehensive design system for digital products</p>
-                    <span class="category-tag">Graphics Design</span>
+                    <p>Comprehensive design system for digital products with components, states, and interactions</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Design System</span>
+                    </div>
                 </div>
 
-                <div class="portfolio-item glass" data-category="coding">
-                    <div class="portfolio-image coding-placeholder"></div>
-                    <h3>Creative Coding Experiment</h3>
-                    <p>Generative art and interactive visual experiences</p>
-                    <span class="category-tag">Coding</span>
+                <!-- Traditional Art -->
+                <div class="portfolio-item glass fade-in" data-category="art">
+                    <div class="portfolio-image art-placeholder">
+                        <div class="image-overlay">✏️</div>
+                    </div>
+                    <h3>Character Design Series</h3>
+                    <p>Traditional pencil sketches exploring diverse character archetypes and personality studies</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pencil</span>
+                        <span class="tech-tag">Character Art</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item glass fade-in" data-category="art">
+                    <div class="portfolio-image art-placeholder">
+                        <div class="image-overlay">✏️</div>
+                    </div>
+                    <h3>Watercolor Landscapes</h3>
+                    <p>A collection of watercolor paintings capturing various landscapes and natural scenes</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Watercolor</span>
+                        <span class="tech-tag">Fine Art</span>
+                    </div>
+                </div>
+
+                <!-- Coding Projects -->
+                <div class="portfolio-item glass fade-in" data-category="coding">
+                    <div class="portfolio-image coding-placeholder">
+                        <div class="image-overlay">💻</div>
+                    </div>
+                    <h3>Interactive Web Experience</h3>
+                    <p>Full-stack web application with smooth animations, interactive elements, and responsive design</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/ririislockedin" class="view-btn external-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="portfolio-item glass fade-in" data-category="coding">
+                    <div class="portfolio-image coding-placeholder">
+                        <div class="image-overlay">💻</div>
+                    </div>
+                    <h3>Creative Coding Project</h3>
+                    <p>Generative art and interactive visual experiences using JavaScript and Canvas API</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Canvas</span>
+                    </div>
+                    <a href="https://github.com/ririislockedin" class="view-btn external-link" target="_blank">View on GitHub →</a>
+                </div>
+
+                <!-- Data & Research -->
+                <div class="portfolio-item glass fade-in" data-category="data">
+                    <div class="portfolio-image data-placeholder">
+                        <div class="image-overlay">📊</div>
+                    </div>
+                    <h3>Market Trend Analysis</h3>
+                    <p>Data-driven insights from market behavior analysis with interactive visualizations</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Data Viz</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item glass fade-in" data-category="data">
+                    <div class="portfolio-image data-placeholder">
+                        <div class="image-overlay">📊</div>
+                    </div>
+                    <h3>User Behavior Research</h3>
+                    <p>Comprehensive user research and behavioral analysis with actionable insights and recommendations</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">UX Research</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,13 +246,24 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <p>I'd love to collaborate or hear about your projects!</p>
+            <div class="contact-content fade-in">
+                <p class="contact-text">I'd love to collaborate, discuss projects, or just chat about creative ideas!</p>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:rimalynmags@gmail.com">rimalynmags@gmail.com</a></p>
+                </div>
                 <div class="social-links">
-                    <a href="#" class="social-btn pink">GitHub</a>
-                    <a href="#" class="social-btn purple">LinkedIn</a>
-                    <a href="#" class="social-btn blue">Instagram</a>
-                    <a href="#" class="social-btn yellow">Email</a>
+                    <a href="https://github.com/ririislockedin" class="social-btn pink" target="_blank">
+                        <span class="social-icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rimalyn-magallamento" class="social-btn purple" target="_blank">
+                        <span class="social-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:rimalynmags@gmail.com" class="social-btn blue">
+                        <span class="social-icon">✉️</span>
+                        <span>Email</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -172,7 +271,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 ririislockedin. All rights reserved.</p>
+        <p>&copy; 2026 ririislockedin. All rights reserved. Made with 💕 and creativity.</p>
     </footer>
 
     <script src="script.js"></script>
