@@ -1,4 +1,54 @@
-// Portfolio filtering
+// ===== DYNAMIC GRADIENT ON SCROLL =====
+window.addEventListener('scroll', () => {
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    if (scrollPercent < 25) {
+        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-blue', 'scroll-yellow');
+    } else if (scrollPercent < 50) {
+        document.body.classList.remove('scroll-purple', 'scroll-blue', 'scroll-yellow');
+        document.body.classList.add('scroll-pink');
+    } else if (scrollPercent < 75) {
+        document.body.classList.remove('scroll-pink', 'scroll-blue', 'scroll-yellow');
+        document.body.classList.add('scroll-purple');
+    } else if (scrollPercent < 90) {
+        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-yellow');
+        document.body.classList.add('scroll-blue');
+    } else {
+        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-blue');
+        document.body.classList.add('scroll-yellow');
+    }
+    
+    // Update scroll progress bar
+    const scrollProgress = document.querySelector('.scroll-progress');
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
+// ===== HOVER GRADIENT ANIMATION =====
+document.body.addEventListener('mouseenter', () => {
+    document.body.style.animationDuration = '8s';
+});
+
+document.body.addEventListener('mouseleave', () => {
+    document.body.style.animationDuration = '15s';
+});
+
+// ===== NAVBAR GRADIENT ON SCROLL =====
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    navbar.classList.remove('scroll-active-pink', 'scroll-active-purple', 'scroll-active-blue', 'scroll-active-yellow');
+    
+    if (scrollPercent < 50) {
+        navbar.classList.add('scroll-active-pink');
+    } else if (scrollPercent < 75) {
+        navbar.classList.add('scroll-active-purple');
+    } else {
+        navbar.classList.add('scroll-active-blue');
+    }
+});
+
+// ===== PORTFOLIO FILTERING =====
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -21,15 +71,7 @@ filterButtons.forEach(button => {
     });
 });
 
-// Scroll progress bar
-const scrollProgress = document.querySelector('.scroll-progress');
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = (window.scrollY / windowHeight) * 100;
-    scrollProgress.style.width = scrolled + '%';
-});
-
-// Smooth scroll for navigation links
+// ===== SMOOTH SCROLL NAVIGATION =====
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -40,7 +82,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Intersection Observer for fade-in on scroll
+// ===== INTERSECTION OBSERVER FOR FADE-IN =====
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -59,41 +101,10 @@ document.querySelectorAll('.fade-in, .skill-card, .portfolio-item').forEach(el =
     observer.observe(el);
 });
 
-// CTA button scroll
+// ===== CTA BUTTON =====
 const ctaButton = document.querySelector('.cta-button');
 if (ctaButton) {
     ctaButton.addEventListener('click', () => {
         document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     });
 }
-
-// Hamburger menu
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-}
-
-// Active nav link on scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
