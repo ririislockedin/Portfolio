@@ -1,51 +1,31 @@
-// ===== DYNAMIC GRADIENT ON SCROLL =====
-window.addEventListener('scroll', () => {
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+// ===== CURSOR-TRACKING GRADIENT EFFECT (MAGNETIC) =====
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     
-    if (scrollPercent < 25) {
-        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-blue', 'scroll-yellow');
-    } else if (scrollPercent < 50) {
-        document.body.classList.remove('scroll-purple', 'scroll-blue', 'scroll-yellow');
-        document.body.classList.add('scroll-pink');
-    } else if (scrollPercent < 75) {
-        document.body.classList.remove('scroll-pink', 'scroll-blue', 'scroll-yellow');
-        document.body.classList.add('scroll-purple');
-    } else if (scrollPercent < 90) {
-        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-yellow');
-        document.body.classList.add('scroll-blue');
-    } else {
-        document.body.classList.remove('scroll-pink', 'scroll-purple', 'scroll-blue');
-        document.body.classList.add('scroll-yellow');
-    }
+    // Calculate percentage position
+    const xPercent = (mouseX / window.innerWidth) * 100;
+    const yPercent = (mouseY / window.innerHeight) * 100;
     
-    // Update scroll progress bar
-    const scrollProgress = document.querySelector('.scroll-progress');
-    scrollProgress.style.width = scrollPercent + '%';
+    // Update CSS variables for cursor position
+    document.documentElement.style.setProperty('--cursor-x', xPercent + '%');
+    document.documentElement.style.setProperty('--cursor-y', yPercent + '%');
+    
+    // Activate cursor gradient on move
+    document.body.classList.add('cursor-active');
 });
 
-// ===== HOVER GRADIENT ANIMATION =====
-document.body.addEventListener('mouseenter', () => {
-    document.body.style.animationDuration = '8s';
+// Deactivate when mouse leaves window
+document.addEventListener('mouseleave', () => {
+    document.body.classList.remove('cursor-active');
 });
 
-document.body.addEventListener('mouseleave', () => {
-    document.body.style.animationDuration = '15s';
-});
-
-// ===== NAVBAR GRADIENT ON SCROLL =====
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    
-    navbar.classList.remove('scroll-active-pink', 'scroll-active-purple', 'scroll-active-blue', 'scroll-active-yellow');
-    
-    if (scrollPercent < 50) {
-        navbar.classList.add('scroll-active-pink');
-    } else if (scrollPercent < 75) {
-        navbar.classList.add('scroll-active-purple');
-    } else {
-        navbar.classList.add('scroll-active-blue');
-    }
+// Reactivate when mouse enters
+document.addEventListener('mouseenter', () => {
+    document.body.classList.add('cursor-active');
 });
 
 // ===== PORTFOLIO FILTERING =====
@@ -69,6 +49,14 @@ filterButtons.forEach(button => {
             }
         });
     });
+});
+
+// ===== SCROLL PROGRESS BAR =====
+window.addEventListener('scroll', () => {
+    const scrollProgress = document.querySelector('.scroll-progress');
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
 });
 
 // ===== SMOOTH SCROLL NAVIGATION =====
