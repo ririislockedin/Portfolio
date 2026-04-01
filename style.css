@@ -380,33 +380,6 @@ section {
     display: flex;
     justify-content: center;
 }
-
-.glass-card {
-    padding: 40px;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.icon-item {
-    font-size: 3rem;
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
 .icon-item:hover {
     transform: scale(1.1) rotate(10deg);
     filter: drop-shadow(0 0 15px currentColor);
