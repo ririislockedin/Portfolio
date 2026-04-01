@@ -530,8 +530,7 @@ section {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 350px;
-    gap: 50px;
+    gap: 40px;
 }
 
 .gallery-item {
