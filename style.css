@@ -541,7 +541,7 @@ section {
 }
 
 .gallery-item img {
-    height: 500px;
+    height: 490px;
     width: 380px;
     object-fit: cover;
     transition: var(--transition);
