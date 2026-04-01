@@ -812,4 +812,39 @@ section {
         width: 100%;
         justify-content: center;
     }
+    /* The Animation: A full 360-degree turn */
+@keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* The Container: This rotates the entire grid */
+.icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    animation: orbit 20s linear infinite; /* Slow, constant rotation */
+}
+
+/* The Icons: This rotates them BACKWARDS so they stay upright */
+.icon-item {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This must match the 'orbit' name and time exactly, but use 'reverse' */
+    animation: orbit 20s linear infinite reverse; 
+}
+
+/* Optional: Keep your glass card centered */
+.glass-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }
