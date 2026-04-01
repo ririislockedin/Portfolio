@@ -23,89 +23,42 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    background-size: 100% 100%;
     color: #fff;
     overflow-x: hidden;
     position: relative;
-    animation: gradientShift 15s ease infinite;
 }
 
-/* ===== DYNAMIC GRADIENT ANIMATION ===== */
-@keyframes gradientShift {
-    0% {
-        background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
-    }
-    25% {
-        background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 50%, var(--blue) 100%);
-    }
-    50% {
-        background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--yellow) 100%);
-    }
-    75% {
-        background: linear-gradient(135deg, var(--blue) 0%, var(--yellow) 50%, var(--pink) 100%);
-    }
-    100% {
-        background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
-    }
+/* ===== CURSOR-TRACKING GRADIENT ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--cursor-x, 50%) var(--cursor-y, 50%), 
+                                rgba(255, 179, 217, 0.15), 
+                                rgba(216, 179, 255, 0.1),
+                                rgba(179, 229, 255, 0.08),
+                                transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* ===== SCROLL-BASED GRADIENT ===== */
-body.scroll-pink {
-    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 50%, #0f0f1e 100%) !important;
-}
-
-body.scroll-purple {
-    background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, #0f0f1e 100%) !important;
-}
-
-body.scroll-blue {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--yellow) 50%, #0f0f1e 100%) !important;
-}
-
-body.scroll-yellow {
-    background: linear-gradient(135deg, var(--yellow) 0%, var(--pink) 50%, #0f0f1e 100%) !important;
-}
-
-/* ===== GRADIENT OVERLAY FOR SECTIONS ===== */
-section {
-    position: relative;
-    padding: 100px 20px;
-    background: rgba(15, 15, 30, 0.6);
-    backdrop-filter: blur(10px);
-    margin: 0;
-    transition: background 0.6s ease;
-}
-
-section:nth-child(2) {
-    background: linear-gradient(135deg, rgba(255, 179, 217, 0.1), rgba(15, 15, 30, 0.6));
-}
-
-section:nth-child(3) {
-    background: linear-gradient(135deg, rgba(216, 179, 255, 0.1), rgba(15, 15, 30, 0.6));
-}
-
-section:nth-child(4) {
-    background: linear-gradient(135deg, rgba(179, 229, 255, 0.1), rgba(15, 15, 30, 0.6));
-}
-
-section:nth-child(5) {
-    background: linear-gradient(135deg, rgba(255, 250, 179, 0.1), rgba(15, 15, 30, 0.6));
-}
-
-section:nth-child(6) {
-    background: linear-gradient(135deg, rgba(255, 179, 217, 0.1), rgba(179, 229, 255, 0.1), rgba(15, 15, 30, 0.6));
-}
-
-/* ===== HOVER GRADIENT EFFECT ===== */
-body:hover {
-    animation: gradientShift 8s ease infinite;
+body.cursor-active::before {
+    opacity: 1;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== SCROLL PROGRESS BAR ===== */
@@ -132,26 +85,6 @@ body:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin-top: 4px;
     transition: background 0.6s ease;
-}
-
-.navbar.scroll-active-pink {
-    background: rgba(255, 179, 217, 0.1);
-    box-shadow: 0 0 20px rgba(255, 179, 217, 0.3);
-}
-
-.navbar.scroll-active-purple {
-    background: rgba(216, 179, 255, 0.1);
-    box-shadow: 0 0 20px rgba(216, 179, 255, 0.3);
-}
-
-.navbar.scroll-active-blue {
-    background: rgba(179, 229, 255, 0.1);
-    box-shadow: 0 0 20px rgba(179, 229, 255, 0.3);
-}
-
-.navbar.scroll-active-yellow {
-    background: rgba(255, 250, 179, 0.1);
-    box-shadow: 0 0 20px rgba(255, 250, 179, 0.3);
 }
 
 .nav-container {
@@ -241,7 +174,7 @@ body:hover {
     position: relative;
     overflow: hidden;
     margin-top: 60px;
-    background: rgba(15, 15, 30, 0.4) !important;
+    background: rgba(15, 15, 30, 0.4);
 }
 
 .stars {
@@ -358,6 +291,16 @@ body:hover {
 }
 
 /* ===== SECTION STYLES ===== */
+section {
+    position: relative;
+    padding: 100px 20px;
+    background: rgba(15, 15, 30, 0.6);
+    backdrop-filter: blur(10px);
+    margin: 0;
+    transition: background 0.6s ease;
+    z-index: 2;
+}
+
 .section-title {
     font-size: 3rem;
     text-align: center;
@@ -384,7 +327,7 @@ body:hover {
 
 /* ===== ABOUT SECTION ===== */
 .about {
-    background: linear-gradient(135deg, rgba(255, 179, 217, 0.05), rgba(216, 179, 255, 0.05)) !important;
+    background: linear-gradient(135deg, rgba(255, 179, 217, 0.05), rgba(216, 179, 255, 0.05));
 }
 
 .about-content {
@@ -491,7 +434,7 @@ body:hover {
 
 /* ===== SKILLS SECTION ===== */
 .skills {
-    background: linear-gradient(135deg, rgba(216, 179, 255, 0.05), rgba(179, 229, 255, 0.05)) !important;
+    background: linear-gradient(135deg, rgba(216, 179, 255, 0.05), rgba(179, 229, 255, 0.05));
 }
 
 .skills-grid {
@@ -545,7 +488,7 @@ body:hover {
 
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio {
-    background: linear-gradient(135deg, rgba(179, 229, 255, 0.05), rgba(255, 250, 179, 0.05)) !important;
+    background: linear-gradient(135deg, rgba(179, 229, 255, 0.05), rgba(255, 250, 179, 0.05));
 }
 
 .filter-buttons {
@@ -715,7 +658,7 @@ body:hover {
 
 /* ===== CONTACT SECTION ===== */
 .contact {
-    background: linear-gradient(135deg, rgba(255, 250, 179, 0.05), rgba(255, 179, 217, 0.05)) !important;
+    background: linear-gradient(135deg, rgba(255, 250, 179, 0.05), rgba(255, 179, 217, 0.05));
     text-align: center;
 }
 
@@ -813,6 +756,8 @@ body:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #999;
     background: rgba(15, 15, 30, 0.8);
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== ANIMATIONS ===== */
