@@ -31,6 +31,7 @@ document.addEventListener('mouseenter', () => {
 // ===== PORTFOLIO FILTERING =====
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+const galleryItems = document.querySelectorAll('.gallery-item');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -42,10 +43,20 @@ filterButtons.forEach(button => {
         portfolioItems.forEach(item => {
             const itemCategory = item.getAttribute('data-category');
             if (filter === 'all' || itemCategory === filter) {
-                item.style.display = 'block';
+                item.style.display = 'flex';
                 setTimeout(() => item.classList.add('fade-in'), 10);
             } else {
                 item.style.display = 'none';
+            }
+        });
+
+        galleryItems.forEach(item => {
+            const gallery = item.parentElement;
+            const galleryCategory = gallery.getAttribute('data-category');
+            if (filter === 'all' || galleryCategory === filter) {
+                gallery.style.display = 'grid';
+            } else {
+                gallery.style.display = 'none';
             }
         });
     });
@@ -85,7 +96,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-in, .skill-card, .portfolio-item').forEach(el => {
+document.querySelectorAll('.fade-in, .skill-card, .portfolio-item, .gallery-item').forEach(el => {
     observer.observe(el);
 });
 
