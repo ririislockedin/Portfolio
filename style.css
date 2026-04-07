@@ -745,7 +745,7 @@ section {
     padding: 40px;
     border-radius: 20px;
     display: grid;
-    grid-template-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     min-height: 450px;
     width: 1200px;
