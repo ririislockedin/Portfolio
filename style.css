@@ -860,6 +860,11 @@ section {
     font-size: 0.95rem;
 }
 
+.ambotsaimo {
+    height: 20px;
+    width: 100%;
+}
+
 /* ===== ACADEMIC YEARS GRID ===== */
 .academic-years {
     display: grid;
