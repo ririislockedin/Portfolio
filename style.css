@@ -744,9 +744,9 @@ section {
 .highschool-section {
     padding: 40px;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-column: 1fr 1fr;
+    justify-content: center;
     min-height: 450px;
     width: 1200px;
     gap: 30px;
@@ -772,8 +772,10 @@ section {
 /* ===== FREESTYLE OVERLAPPING COLLAGE ===== */
 .collage-container {
     position: relative;
-    height: 280px;
-    width: 37%;
+    height: 300px;
+    width: 75%;
+    justify-self: center;
+    margin: 50px;
 }
 
 .collage-image {
