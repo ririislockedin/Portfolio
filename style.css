@@ -727,7 +727,6 @@ section {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
 }
-
 /* ===== ACADEMICS SECTION ===== */
 .academics {
     background: linear-gradient(135deg, rgba(216, 179, 255, 0.08), rgba(255, 179, 217, 0.08));
@@ -1086,64 +1085,6 @@ section {
         top: 20px;
     }
 }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .nav-menu {
-        gap: 15px;
-    }
-
-    .title-main {
-        font-size: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .portfolio-item {
-        min-height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-menu {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .title-main {
-        font-size: 2rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .social-btn {
-        width: 100%;
-        justify-content: center;
-    }
 
 }
 
