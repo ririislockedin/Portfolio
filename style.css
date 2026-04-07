@@ -785,6 +785,7 @@ section {
         width: 100%;
         justify-content: center;
     }
+    
     /* ===== ACADEMICS SECTION ===== */
 .academics {
     background: linear-gradient(135deg, rgba(216, 179, 255, 0.08), rgba(255, 179, 217, 0.08));
@@ -1144,4 +1145,3 @@ section {
     }
 }
 
-}
