@@ -28,6 +28,93 @@ document.addEventListener('mouseenter', () => {
     document.body.classList.add('cursor-active');
 });
 
+// ===== IMAGE LIGHTBOX/MODAL =====
+function initLightbox() {
+    // Create lightbox HTML
+    const lightboxHTML = `
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="Expanded view">
+                <button class="lightbox-close">&times;</button>
+                <button class="lightbox-prev">❮</button>
+                <button class="lightbox-next">❯</button>
+            </div>
+            <div class="lightbox-background"></div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+    
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    const lightboxBg = document.querySelector('.lightbox-background');
+    
+    let currentImageIndex = 0;
+    let allImages = [];
+    
+    // Collect all clickable images
+    function collectImages() {
+        allImages = Array.from(document.querySelectorAll('.gallery-item img, .year-image, .collage-image img, .project-image, .profile-photo'));
+    }
+    
+    // Open lightbox
+    function openLightbox(img) {
+        collectImages();
+        currentImageIndex = allImages.indexOf(img);
+        lightboxImage.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Show next image
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % allImages.length;
+        lightboxImage.src = allImages[currentImageIndex].src;
+    }
+    
+    // Show previous image
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+        lightboxImage.src = allImages[currentImageIndex].src;
+    }
+    
+    // Add click listeners to all images
+    document.querySelectorAll('.gallery-item img, .year-image, .collage-image img, .project-image, .profile-photo').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => openLightbox(img));
+    });
+    
+    // Close button
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    // Background click to close
+    lightboxBg.addEventListener('click', closeLightbox);
+    
+    // Navigation buttons
+    lightboxNext.addEventListener('click', nextImage);
+    lightboxPrev.addEventListener('click', prevImage);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeLightbox();
+    });
+}
+
+// Initialize lightbox when DOM is ready
+document.addEventListener('DOMContentLoaded', initLightbox);
+
 // ===== PORTFOLIO FILTERING =====
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
