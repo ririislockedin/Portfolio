@@ -35,11 +35,12 @@ function initLightbox() {
         <div class="lightbox" id="lightbox">
             <div class="lightbox-content">
                 <img id="lightbox-image" src="" alt="Expanded view">
-                <button class="lightbox-close">&times;</button>
-                <button class="lightbox-prev">❮</button>
-                <button class="lightbox-next">❯</button>
             </div>
-            <div class="lightbox-background"></div>
+            <div class="lightbox-background">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">❮</button>
+            <button class="lightbox-next">❯</button>
+            </div>
         </div>
     `;
     
