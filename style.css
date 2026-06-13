@@ -1007,13 +1007,13 @@ section {
 }
 
 .year-image {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 160px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(255, 179, 217, 0.3);
     transition: var(--transition);
     cursor: pointer;
-    display: block;
+    display: inline-grid;
 }
 
 .year-image:hover {
