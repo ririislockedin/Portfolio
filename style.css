@@ -105,7 +105,7 @@ body.cursor-active::before {
 }
 
 #lightbox-image {
-    max-width: 100%;
+    max-width: 550px;
     max-height: 100%;
     border-radius: 20px;
     box-shadow: 0 0 60px rgba(255, 179, 217, 0.6);
