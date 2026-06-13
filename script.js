@@ -38,8 +38,6 @@ function initLightbox() {
             </div>
             <div class="lightbox-background">
             <button class="lightbox-close">&times;</button>
-            <button class="lightbox-prev">❮</button>
-            <button class="lightbox-next">❯</button>
             </div>
         </div>
     `;
