@@ -105,12 +105,13 @@ body.cursor-active::before {
 }
 
 #lightbox-image {
-    max-width: 550px;
-    max-height: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 0 60px rgba(255, 179, 217, 0.6);
     object-fit: contain;
-    animation: zoomIn 0.3s ease-out;
 }
 
 @keyframes zoomIn {
@@ -664,6 +665,7 @@ section {
 }
 
 .gallery-item {
+    height: 420px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(255, 179, 217, 0.3);
@@ -672,10 +674,12 @@ section {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    transition: var(--transition);
     cursor: pointer;
+    transition: transform .4s ease;
 }
 
 .gallery-item:hover img {
