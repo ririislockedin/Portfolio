@@ -1058,4 +1058,22 @@ section {
     .college-section {
         grid-template-columns: 1fr;
     }
+    .year-section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .year-images-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .progress-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
